@@ -1,0 +1,301 @@
+/* General resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+nav {
+  background-color: #ff6b6b;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+nav form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav input {
+  padding: 5px;
+  border-radius: 4px;
+  border: none;
+}
+
+nav button {
+  padding: 5px 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background-color: #555;
+}
+
+/* Responsive Navbar for Mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 5px 0;
+  }
+
+  nav form {
+    width: 100%;
+  }
+
+  nav input {
+    width: 80%;
+    margin: auto;
+  }
+
+  nav button {
+    width: 80%;
+    margin: 10px auto;
+  }
+}
+
+/* Page headings */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #ff6b6b;
+}
+
+/* Meal list and cards */
+.mealList {
+  margin: 5px;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.mealCard {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  width: 20%;
+  transition: transform 0.2s;
+  height: 65%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.mealCard:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+.mealImage {
+  width: 100%;
+  height: 200px; /* Fixed height for uniformity */
+  object-fit: cover;
+  transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.mealCard:hover .meal-image {
+  transform: scale(0.9); /* Scale down the image on hover */
+}
+
+.mealCard button {
+  margin: 10px 0;
+  padding: 10px 20px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+  width: 50%;
+}
+
+.mealCard button:hover {
+  background-color: #ff4c4c; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.mealCard button:active {
+  background-color: #610000; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Responsive Meal Card for Mobile */
+@media (max-width: 768px) {
+  .mealCard {
+    width: 45%; /* Adjust card width on smaller screens */
+  }
+
+  .mealImage {
+    height: 150px; /* Adjust image height for mobile */
+  }
+}
+
+/* Favorites list */
+.favoritesPage {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.favoritesPage .mealList {
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.FavmealCard {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s;
+
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: space-around;
+  max-width: 40%;
+}
+
+.FavmealCard .mealInfo {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.FavmealCard .mealInfo p {
+  height: 75%;
+  overflow: auto;
+}
+
+.FavmealCard .mealInfo a {
+  color: #ff6b6b;
+  text-decoration: none;
+}
+
+.FavmealCard .mealInfo button {
+  margin: 10px 0;
+  padding: 10px 20px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+  width: 50%;
+}
+
+.FavmealCard .mealInfo button:hover {
+  background-color: #ff4c4c; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.FavmealCard .mealInfo button:active {
+  background-color: #610000; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.FavmealCard img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Responsive Favorite Meal Card */
+@media (max-width: 768px) {
+  .FavmealCard {
+    flex-direction: column; /* Stack the image and info vertically */
+    max-width: 80%; /* Adjust the card size */
+  }
+
+  .FavmealCard img {
+    width: 100%; /* Ensure the image takes full width */
+    height: 200px; /* Adjust image height for mobile */
+  }
+
+  .FavmealCard .mealInfo {
+    height: auto;
+  }
+}
+
+/* footer */
+.footer {
+  box-sizing: border-box;
+  text-align: center;
+  padding: 5px;
+  background-color: #ff6b6b;
+  box-shadow: 0px -3px 15px var(#ff6b6b);
+  border-radius: 10px;
+
+  color: white;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+/* scrollbar */
+/* Scrollbar styles for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 1px; /* Width of the scrollbar */
+  height: 2px; /* Height of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the scrollbar track */
+  border-radius: 20px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff6b6b; /* Color of the scrollbar thumb */
+  border-radius: 20px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff4c4c; /* Color when hovering over the thumb */
+}
+
+/* Scrollbar styles for Firefox */
+* {
+  scrollbar-width: thin; /* Use a thin scrollbar */
+  scrollbar-color: #ff6b6b #f1f1f1; /* thumb color and track color */
+}
+
+/* If you want to support Internet Explorer */
+.scrollable {
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* Autohiding scrollbar */
+}
