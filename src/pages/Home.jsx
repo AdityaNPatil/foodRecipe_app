@@ -67,7 +67,7 @@ const Home = () => {
                 try {
                     // ◘◘ must have https in front of url of axios 
                     const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${areaTxt}`)
-                    console.log(response.data)  // returns array of meals
+                    // console.log(response.data)  // returns array of meals
                     setRecipes(response.data)
                     // console.log(recipes)
                 } catch (err) {
